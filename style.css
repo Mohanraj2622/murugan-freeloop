@@ -5,6 +5,15 @@
   --text-light: #fffdfd;
   --text-gray: #fafafa;
   --player-bg: #9ba39e;
+  --primary-color: #1DB954;
+  --secondary-color: #535353;
+  --background-dark: #121212;
+  --background-light: #282828;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --transition-speed: 0.3s;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --gradient-primary: linear-gradient(45deg, #1DB954, #1ed760);
 }
 
 * {
@@ -15,11 +24,10 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--background-dark);
+  color: var(--text-primary);
   height: 100vh;
   overflow: hidden;
-  margin-top: 70px;
 }
 
 .Welcome {
@@ -105,13 +113,24 @@ body {
 .track-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  overflow-y: auto;
 }
 
 .track {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 8px;
+  background: var(--background-light);
+  transition: transform var(--transition-speed), background var(--transition-speed);
+  position: relative;
+}
+
+.track:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .track-cover {
@@ -120,6 +139,9 @@ body {
   border-radius: 5px;
   margin-right: 10px;
 }
+
+
+
 
 .track-info {
   display: flex;
