@@ -32,6 +32,12 @@ function updateAppInventorWithMediaSessionStatus(status) {
     window.AppInventor.setWebViewString("MediaSessionStatus: " + status);
   }
 }
+  fetch("https://script.google.com/macros/s/AKfycbwRTuXI4PMjGI9lIqwK4Pih00i0kHsLw2pudIFLs13ESrXbfFGjIpFWP3qn8qCkiLbI8A/exec")
+    .then(response => response.text())
+    .then(count => {
+      document.getElementById("visit-count").textContent = count;
+    })
+    .catch(error => console.error("Error fetching visit count:", error));
 
 // Media Session API Integration
 function setupMediaSession() {
