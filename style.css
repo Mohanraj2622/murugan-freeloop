@@ -738,3 +738,10 @@ body {
     animation: glowAnimation 1s ease-in-out infinite; /* Continuous glow when clicked */
   }
 }
+#visit-count {
+  color: #ff5733; /* Orange-red color */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
